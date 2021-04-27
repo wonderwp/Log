@@ -122,4 +122,14 @@ interface LoggerInterface
      */
     public function log($level, $message, array $context = array());
 
+    /**
+     * Successful events.
+     *
+     *
+     * @param string $message
+     * @param array  $context
+     *
+     * @return null
+     */
+    public function success($message, array $context = []);
 }

@@ -88,6 +88,14 @@ abstract class AbstractLogger implements LoggerInterface
     /**
      * @inheritDoc
      */
+    public function success($message, array $context = [])
+    {
+        $this->log(AbstractLogger::SUCCESS, $message, $context);
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function debug($message, array $context = [])
     {
         $this->log(AbstractLogger::INFO, $message, $context);
@@ -101,7 +109,7 @@ abstract class AbstractLogger implements LoggerInterface
     /**
      * Adds the current date to the message.
      *
-     * @param  string $message
+     * @param string $message
      *
      * @return string
      */
@@ -117,7 +125,7 @@ abstract class AbstractLogger implements LoggerInterface
     /**
      * Adds the current date to the message.
      *
-     * @param  string $message
+     * @param string $message
      *
      * @return string
      */
