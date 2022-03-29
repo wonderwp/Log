@@ -22,7 +22,8 @@ class WpCliLogger extends AbstractLogger implements LoggerInterface
 
     public function debug($message, array $context = [])
     {
-        \WP_CLI::debug($this->withTime($message));
+        $group = $context['group'] ?? false;
+        \WP_CLI::debug($this->withTime($message), $group);
     }
 
     public function log($level, $message, array $context = [])
