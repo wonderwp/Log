@@ -6,7 +6,8 @@ class WpCliLogger extends AbstractLogger implements LoggerInterface
 {
     public function error($message, array $context = [])
     {
-        \WP_CLI::error($this->withTime($message));
+        $exit = $context['exit'] ?? true;
+        \WP_CLI::error($this->withTime($message), $exit);
     }
 
     public function warning($message, array $context = [])
